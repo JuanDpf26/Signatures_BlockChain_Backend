@@ -7,6 +7,8 @@ const multer = require('multer');
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
+
+
 router.put(
   '/estado',
   authMiddleware,
@@ -26,7 +28,24 @@ router.get(
   '/',
   authMiddleware,
   documentController.getDocuments
+); 
+
+
+router.put(
+  '/nombre',
+  authMiddleware,
+  documentController.updateNombre
 );
+
+// 🗑️ eliminar
+router.delete(
+  '/:id',
+  authMiddleware,
+  documentController.deleteDocument
+);
+
+
+
 
 
 

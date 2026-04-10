@@ -11,6 +11,8 @@ app.use(express.json());
 // RUTAS
 app.use('/api/auth', authRoutes);
 app.use('/api/documents', documentRoutes);
+app.use('/uploads', express.static('uploads'));
+
 
 // SERVIDOR
 app.listen(3000, '0.0.0.0', () => {
